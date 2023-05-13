@@ -16,8 +16,15 @@ lvim.format_on_save = {
 }
 
 -- -- Change theme settings
-lvim.colorscheme = "desert"
+lvim.colorscheme = "habamax"
 
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
+
+-- Java IDE
+lvim.plugins = {
+  "mfussenegger/nvim-jdtls",
+}
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })
