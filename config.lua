@@ -25,6 +25,7 @@ lvim.builtin.treesitter.auto_install = true
 -- Java IDE
 lvim.plugins = {
   "mfussenegger/nvim-jdtls",
+  "mikelue/vim-maven-plugin",
 }
 
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "jdtls" })

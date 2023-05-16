@@ -23,15 +23,15 @@ extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 -- Setup Testing and Debugging
 local bundles = {}
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
-vim.list_extend(bundles, vim.split(vim.fn.glob(mason_path .. "packages/java-test/extension/server/*.jar"), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(mason_path .. "packages/java-test/server/*.jar"), "\n"))
 vim.list_extend(
   bundles,
   vim.split(
-    vim.fn.glob(mason_path .. "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"),
+    vim.fn.glob(mason_path ..
+      "packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"),
     "\n"
   )
 )
-
 lvim.builtin.dap.active = true
 local config = {
   cmd = {
@@ -68,7 +68,7 @@ local config = {
         runtimes = {
           {
             name = "JavaSE-17",
-            path = "/usr/lib64/jvm/jre-17-openjdk/bin/java",
+            path = "/usr/lib64/jvm/jre-17",
           },
         },
       },
